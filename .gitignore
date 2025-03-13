@@ -1,0 +1,5 @@
+# Exclude data directory as it may contain too much stuff
+data
+#exlcude the local python virtual environment
+pyvidi
+.ipynb_checkpoints
