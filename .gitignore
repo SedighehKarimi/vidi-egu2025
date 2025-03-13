@@ -3,3 +3,4 @@ data
 #exlcude the local python virtual environment
 pyvidi
 .ipynb_checkpoints
+__pycache__
