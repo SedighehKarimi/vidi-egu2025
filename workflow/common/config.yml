@@ -1,4 +1,6 @@
 dataroot: "../data"
+mediaroot: "media"
+cart_backgrounds: '../data/backgrounds'
 ncbasin: "hydroshed_csl03_gl_l021_sh300.nc"
 nctws: "tws_sh.nc"
 ncbasav: "ncbasav.nc"
