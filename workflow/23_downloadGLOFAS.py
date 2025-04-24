@@ -25,7 +25,6 @@ gsman=GeoslurpManager(dbalias='marge',readonly_user=False)
 # read the dicharge outlet locations from the database
 dfdisloc=gpd.GeoDataFrame.gslrp.load(gsman.conn,f"SELECT * from  {disloctable}",geom_col='geom')
 dfdisloc.head()
-
 #create a derived glofas class with the data holdings
 class GloFASOutletsv4(CDSBase):
     schema=schema
@@ -89,11 +88,11 @@ x=xr.DataArray(dfdisloc.x-1,dims=['noutlets'])
 y=xr.DataArray(dfdisloc.y-1,dims=['noutlets'])
 
 dsglofasoutlets=dsglofas.dis24[:,y,x].to_dataset()
+dsglofasoutlets['basins']=('noutlets',dfdisloc.name)
+dsglofasoutlets['endo']=('noutlets',dfdisloc.endo)
 dsglofasoutlets['upstream_area']=('noutlets',dfdisloc.upstream_area)
 
-
 glofasfout=os.path.join(datadir,'glofasv4_outlets.nc')
-
 # Overwrite time series data
 dsglofasoutlets.to_netcdf(glofasfout,mode='w')
 
