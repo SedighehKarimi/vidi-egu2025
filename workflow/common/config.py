@@ -22,7 +22,7 @@ posterdark='#003246'
 posterred='#a52a2a'
 itcgreen='#308b7d'
 itcblue='#293f8b'
-xarrayblue='#389ccb'
+shxarrayblue='#389ccb'
 
 
 
@@ -65,3 +65,8 @@ def get_background(name='HypsoReliefWater'):
 
     #set environment variable
     os.environ['CARTOPY_USER_BACKGROUNDS'] = crtbg
+
+EU_basins=['DANUBE', 'RHINE','GARONNE','NEMAN','GLOMA','ANGERMAN']
+EU_centroids=[(47.440,20.066),(51.869,5.583),(41.705,-0.442),(54.98,22.24),(63.702,9.721),(58.983,14.222)]
+AF_basins=['NILE','SHEBELLE','RUFIJI','GULF OF ADEN/SOMALIA','LAKE TURKANA']
+AF_centroids=[(13.973,32.008),(4.100,41.300),(-7.660,37.598),(8.964,47.108),(9.255,38.759)]
