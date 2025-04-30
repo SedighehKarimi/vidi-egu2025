@@ -1,17 +1,12 @@
-# vidi-egu2025
+# VIDI EGU 2025
 
-A repository to:
-1. Process satellite gravimetry Level-2 data
-2. Compute TWS anomalies in the Greater Horn of Africa
-3. Process ERA-5 data
-4. Reduce leakage error in the basins of the Greater Horn of Africa 
-   *(The generated module will be moved to xinv later after generalizing leakage functions, which might support leakage reduction estimation in the inversion-0 scheme)*
-5. Write modules to estimate trends, seasonality, etc
-6. Create and manage a branch for the poster document 
+This repository contains the workflow, code and poster materials for the VIDI project presentation at EGU 2025.
+The abstract can be accessed via:
+https://doi.org/10.5194/egusphere-egu25-18851
 
+The study derives terrestrial water storage anomalies using GRACE and GRACE-FO Level-2 satellite data, along with precipitation and evapotranspiration from ERA5, and river discharge data from GLoFAS.
 
+## Structure
 
-
-
-
-
+- `workflow/` – Notebooks and scripts for data processing, visualization and analysis  
+- `poster/` – Final poster files in PDF and SVG format
