@@ -44,12 +44,18 @@ def main():
     datws=xr.open_dataset(nctws).tws.sh.build_nmindex()
     filtername='DDK5'
     nmaxinput=datws.sh.nmax
-    dabasin_avs=datws.sh.basinav(dsbasins_sh.basins.sh.truncate(nmaxinput),filtername=filtername,leakage_corr='vishwa2016',engine=shxengine)
-    dabasin_avs=dabasin_avs.to_dataset(name='tws_ddk5_vw2016')
+    breakpoint()
+    dabasin_avs=datws.sh.basinav(dsbasins_sh.basins,filtername=filtername,leakage_corr='vishwa2017',engine=shxengine)
+    dabasin_avs=dabasin_avs.to_dataset(name='tws_ddk5_vw2017')
+    # dabasin_avs=datws.sh.basinav(dsbasins_sh.basins.sh.truncate(nmaxinput),filtername=filtername,leakage_corr='vishwa2016',engine=shxengine)
+    # dabasin_avs=dabasin_avs.to_dataset(name='tws_ddk5_vw2016')
+    
+
     #also compute a simply scaled basin average version
     dabasin_avs['tws_ddk5_scaled']=datws.sh.basinav(dsbasins_sh.basins,filtername=filtername,leakage_corr='scale',engine=shxengine)
     #save to netcdf 
     ncbasav=os.path.join(datadir,conf['ncbasav'])
+    #breakpoint()
     dabasin_avs.to_netcdf(ncbasav)
 
 
